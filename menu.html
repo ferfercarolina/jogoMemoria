@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal - Jogo da Memória</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h2>Bem-vindo ao Jogo da Memória!</h2>
+        <button id="start-game" class="btn">Iniciar Jogo</button>
+        <button id="logout" class="btn">Sair</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            if (!loggedInUser) {
+                alert('Você não está logado!');
+                window.location.href = 'login.html';  // Redireciona para a página de login
+            } else {
+                document.querySelector('h2').textContent = `Bem-vindo, ${loggedInUser}!`;
+            }
+        };
+
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'login.html';  // Redireciona para o login
+        });
+
+        document.getElementById('start-game').addEventListener('click', function() {
+            window.location.href = 'memory-game.html';  // Redireciona para o jogo da memória
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #17a2b8;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.card.matched {
+    background-color: #28a745;
+}
+
+.card:hover {
+    background-color: #138496;
+}
+
+#victory-message {
+    background-color: #f8f9fa; /* Fundo claro */
+    padding: 50px 20px; /* Espaçamento */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.victory-container {
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.victory-icon {
+    margin: 20px 0; /* Espaçamento */
+    color: #ffcc00; /* Cor do ícone */
+}
+
+h2 {
+    color: #28a745; /* Cor verde para o título */
+}
+
+p {
+    font-size: 1.2em; /* Tamanho da fonte */
+}
+
+.btn-info {
+    background-color: #007bff; /* Cor do botão */
+    border-color: #007bff; /* Borda do botão */
+}
+
+.btn-info:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+    border-color: #0056b3; /* Borda ao passar o mouse */
+}
+
+
+#game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#menu button {
+    margin: 10px;
+}

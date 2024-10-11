@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Memória</h1>
+        <div id="menu">
+            <button id="solo" class="btn btn-dark">Jogar Sozinho</button>
+            <button id="duo" class="btn btn-dark">Jogar em Dupla</button>
+        </div>
+
+        <div id="game-settings" class="hidden">
+            <label for="difficulty">Nível de Dificuldade:</label>
+            <select id="difficulty" class="form-control">
+                <option value="easy">Fácil</option>
+                <option value="medium">Médio</option>
+                <option value="hard">Difícil</option>
+            </select>
+            <button id="start-game" class="btn btn-success mt-3">Iniciar Jogo</button>
+        </div>
+
+        <div id="game-board-container" class="hidden">
+            <div id="game-info">
+                <p>Erros Jogador 1: <span id="player-one-errors">0</span></p>
+                <p>Erros Jogador 2: <span id="player-two-errors">0</span></p>
+                <p>Erros Gerais (Solo): <span id="error-counter">0</span></p>
+                <p>Tempo: <span id="timer">00:00</span></p>
+            </div>
+            
+            <div id="game-board"></div>
+            <button id="reset-game" class="btn btn-danger mt-3">Reiniciar Jogo</button>
+        </div>
+
+        <div id="victory-message" class="hidden text-center">
+            <div class="victory-container">
+                <h2 class="display-4">Vitória!</h2>
+                <div class="victory-icon">
+                    <i class="fas fa-trophy fa-5x"></i>
+                </div>
+                <p class="lead">Parabéns, você completou o jogo!</p>
+                <p>Tempo: <span id="final-time" class="font-weight-bold"></span></p>
+                <p>Erros: <span id="final-errors" class="font-weight-bold"></span></p>
+                <p>Jogado por: <span id="player-name" class="font-weight-bold">Jogador 1</span></p>
+                <button id="back-to-menu" class="btn btn-info mt-3">Voltar ao Menu</button>
+            </div>
+        </div>
+        
+
+        <div id="history" class="hidden">
+            <h2>Histórico de Partidas</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tempo</th>
+                        <th>Erros Jogador 1</th>
+                        <th>Erros Jogador 2</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <!-- Histórico das partidas será inserido aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
